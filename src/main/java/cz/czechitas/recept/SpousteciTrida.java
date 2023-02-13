@@ -2,12 +2,13 @@ package cz.czechitas.recept;
 
 import cz.czechitas.recept.naradi.*;
 import cz.czechitas.recept.suroviny.*;
+import cz.czechitas.recept.suroviny.intf.NadobaSeSypkouSurovinou;
 
 public class SpousteciTrida {
 
     public static void main(String[] args) {
         Miska cervenaMiska;
-        Miska zlutaMiska;
+        NadobaSeSypkouSurovinou zlutaMiska;
         Mixer mixer;
         Vaha kuchynskaVaha;
         PlechNaPeceni plech;
@@ -41,6 +42,30 @@ public class SpousteciTrida {
         // Vyskakuje samo nebo pomoci Ctrl+Mezernik
 
         cervenaMiska.nalozSiJedenKus(vajicka);
+        for (int i = 0; i < 3; i ++) {
+            cervenaMiska.nalozSiJedenKus(vajicka);
+        }
+        cervenaMiska.nalozSiCelyObsah(pytlikCukru);
+        mixer.zamichej(cervenaMiska);
+        cervenaMiska.nalozSiCelyObsah(maslo125g);
+        mixer.zamichej(cervenaMiska);
+        kuchynskaVaha.vynulujSeS(zlutaMiska);
+        zlutaMiska.nalozSiCelyObsah(cervenaMiska)
+
+        cervenaMiska.nalozSiCelyObsah(zlutaMiska);
+        mixer.zamichej(cervenaMiska);
+        plech.preberSiObsah(cervenaMiska);
+        for (int i = 0; i < 49; i ++) {
+            plech.posypSeKusem(ovoce);
+        }
+        trouba.zapniSe(180);
+        trouba.isPredehrata();
+        trouba.vlozSiDovnitr(plech);
+        trouba.nechejPect(25);
+        trouba.vypniSe();
+        trouba.vyndejObsahVen();
+
+
     }
 
 }
